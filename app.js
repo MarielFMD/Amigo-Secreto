@@ -13,9 +13,16 @@
 
 function agregarAmigo() {
     let amigoIngresado = document.getElementById("amigo").value;
-    console.log(amigoIngresado);
-    amigos.push(amigoIngresado);
-    console.log(amigos);
+    if(amigoIngresado != "") {
+       //console.log(amigoIngresado);
+        amigos.push(amigoIngresado);
+        //console.log(amigos); 
+    } else {
+        alert("Por favor, inserte un nombre.");
+    }
+    
+    
+    
 }
 
    
