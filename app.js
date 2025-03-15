@@ -9,21 +9,6 @@
     Tareas específicas:
     
     Capturar el valor del campo de entrada: Utilizar document.getElementById o document.querySelector para obtener el texto ingresado por el usuario.
-*/
-
-function agregarAmigo() {
-    let amigoIngresado = document.getElementById("amigo").value;
-    if(amigoIngresado != "") {
-       //console.log(amigoIngresado);
-        amigos.push(amigoIngresado);
-        //console.log(amigos); 
-    } else {
-        alert("Por favor, inserte un nombre.");
-    }
-    
-    
-    
-}
 
    
     /*Validar la entrada: Implementar una validación para asegurarse de que el campo no esté vacío. Si está vacío, mostrar un alert con un mensaje de error: "Por favor, inserte un nombre."
@@ -32,6 +17,23 @@ function agregarAmigo() {
 
     Limpiar el campo de entrada: Después de añadir el nombre, restablecer el campo de texto a una cadena vacía.
     */
+
+
+function agregarAmigo() {
+    let amigoIngresado = document.getElementById("amigo").value; //captura el valor ingresado por el usuario
+    if(amigoIngresado != "") { //verifica que el nombre ingresado no esté vacío
+       //console.log(amigoIngresado);
+        amigos.push(amigoIngresado); //agrega al array el valor ingresado
+        //console.log(amigos);
+        document.getElementById("amigo").value = "";  //limpia el campo de entrada
+    } else {
+        alert("Por favor, inserte un nombre.");
+    }
+    
+    
+    
+}
+
 
 
 /*3.Implementa una función para actualizar la lista de amigos
@@ -48,7 +50,15 @@ function agregarAmigo() {
 
     Agregar elementos a la lista: Para cada amigo, crear un nuevo elemento de lista.}
 */
-
+function crearlistaAmigos() {
+    listaAmigos = document.getElementById("listaAmigos"); //selecciona la lista
+    listaAmigos.innerHTML = ""; //limpia la lista existente
+    for (let i of amigos){ //recorre el array
+        let li = document.createElement("li"); //crea un elemento de lista para el nombre ingresado
+        li.textContent = i; //asigna el input al elemento de lista creado
+        listaAmigos.appendChild(li); //agrega el elemento de lista a la lista
+    }
+}
 /*4.Implementa una función para sortear los amigos
 
     Escribe una función que seleccione de manera aleatoria uno de los nombres almacenados en el array amigos. Usa Math.random() y Math.floor() para obtener un índice aleatorio.
@@ -63,3 +73,7 @@ function agregarAmigo() {
 
     Mostrar el resultado: Actualizar el contenido del elemento de resultado utilizando document.getElementById()  e innerHTML para mostrar el amigo sorteado.
 */
+
+function sortearAmigo() {
+    
+}
