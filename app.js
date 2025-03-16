@@ -22,8 +22,6 @@ function crearListaAmigos() {
 }
 
 function sortearAmigo() {
-    const listaAmigos = document.getElementById("listaAmigos");
-    listaAmigos.innerHTML = ""; //limpia la lista 
     if (amigos.length > 0) { //comprueba que el array no esté vacío antes de sortear
         let amigoSorteado = Math.floor(Math.random()*amigos.length); //genera un índice aleatorio del array
         const resultado = document.getElementById("resultado"); 
