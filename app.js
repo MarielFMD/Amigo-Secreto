@@ -29,9 +29,7 @@ function agregarAmigo() {
     } else {
         alert("Por favor, inserte un nombre.");
     }
-    
-    
-    
+        crearListaAmigos()
 }
 
 
@@ -50,7 +48,7 @@ function agregarAmigo() {
 
     Agregar elementos a la lista: Para cada amigo, crear un nuevo elemento de lista.}
 */
-function crearlistaAmigos() {
+function crearListaAmigos() {
     listaAmigos = document.getElementById("listaAmigos"); //selecciona la lista
     listaAmigos.innerHTML = ""; //limpia la lista existente
     for (let i of amigos){ //recorre el array
@@ -59,6 +57,7 @@ function crearlistaAmigos() {
         listaAmigos.appendChild(li); //agrega el elemento de lista a la lista
     }
 }
+
 /*4.Implementa una función para sortear los amigos
 
     Escribe una función que seleccione de manera aleatoria uno de los nombres almacenados en el array amigos. Usa Math.random() y Math.floor() para obtener un índice aleatorio.
@@ -75,5 +74,13 @@ function crearlistaAmigos() {
 */
 
 function sortearAmigo() {
-    
-}
+    listaAmigos = document.getElementById("listaAmigos");
+    listaAmigos.innerHTML = "";
+    console.log(amigos);
+    if (amigos.length > 0) {//comprueba que el array no esté vacío antes de sortear
+        let amigoSorteado = Math.floor(Math.random()*amigos.length); //genera un índice aleatorio del array
+        console.log(amigoSorteado);
+        let resultado = document.getElementById("resultado"); 
+        resultado.innerHTML = amigos[amigoSorteado];
+    }
+    }
