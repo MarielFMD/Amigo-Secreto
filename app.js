@@ -26,5 +26,7 @@ function sortearAmigo() {
         let amigoSorteado = Math.floor(Math.random()*amigos.length); //genera un índice aleatorio del array
         const resultado = document.getElementById("resultado"); 
         resultado.innerHTML = amigos[amigoSorteado]; 
+    } else {
+        alert("¡No tenés amigos para sortear!")
     }
     }
